@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChariXAngie — A shared portfolio showcasing two creative minds, their skills, projects, and story.">
+    <title>ChariXAngie | Shared Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Particle Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-char">Chari</span><span class="logo-x">X</span><span class="logo-angie">Angie</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link" data-section="about">About Us</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 Two Minds, One Vision</div>
+            <h1 class="hero-title">
+                <span class="hero-line">We are a team</span>
+                <span class="hero-name gradient-text">ChariXAngie</span>
+            </h1>
+            <p class="hero-subtitle">Two passionate creators building the future together, blending creativity, code, and innovation.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    <span>We are tech enthusiasts</span>
+                    <p>Angela: Software Developer</p>
+                    <p>Charity: Cybersecurity Analyst</p>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="#projects" class="btn btn-outline">
+                    <span>Project</span>
+                    <p>Angela has developed several projects including a URL management system and an API management system </p>
+                    <p>Charity has developed an Attendance Management system  </p>
+                    <i class="fas fa-rocket"></i>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="2">0</span>
+                    <span class="stat-label">Creators</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="10">0</span>
+                    <span class="stat-label">Skills</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">👋 Get To Know Us</span>
+                <h2 class="section-title">About <span class="gradient-text">Us</span></h2>
+                <p class="section-desc">Two unique individuals, one shared journey.</p>
+            </div>
+
+            <!-- Person Toggle -->
+            <div class="person-toggle" id="aboutToggle">
+                <button class="toggle-btn active" data-person="1">
+                    <i class="fas fa-user"></i> Person 1
+                </button>
+                <button class="toggle-btn" data-person="2">
+                    <i class="fas fa-user"></i> Person 2
+                </button>
+                <div class="toggle-slider"></div>
+            </div>
+
+            <!-- Person 1 About -->
+            <div class="person-card active" data-person="1" id="about-person-1">
+                <div class="card glass-card">
+                    <div class="about-grid">
+                        <div class="about-image">
+                            <div class="image-frame">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Person 1 Photo</span>
+                                </div>
+                                <div class="image-decoration"></div>
+                            </div>
+                        </div>
+                        <div class="about-content">
+                            <h3 class="about-name">
+                                <span class="name-label">Name:</span>
+                                <span class="editable-field" data-field="name1">[Your Name Here]</span>
+                            </h3>
+                            <div class="about-role">
+                                <i class="fas fa-briefcase"></i>
+                                <span class="editable-field" data-field="role1">[Your Role / Title Here]</span>
+                            </div>
+                            <p class="about-bio">
+                                <span class="editable-field" data-field="bio1">[Write your bio here — Share your story, your passions, what drives you, and what you bring to this partnership. Make it personal and authentic!]</span>
+                            </p>
+                            <div class="about-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="editable-field" data-field="location1">[Your Location]</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span class="editable-field" data-field="education1">[Your Education / Background]</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="editable-field" data-field="interests1">[Your Interests / Hobbies]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Person 2 About -->
+            <div class="person-card" data-person="2" id="about-person-2">
+                <div class="card glass-card">
+                    <div class="about-grid">
+                        <div class="about-image">
+                            <div class="image-frame">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Person 2 Photo</span>
+                                </div>
+                                <div class="image-decoration person2"></div>
+                            </div>
+                        </div>
+                        <div class="about-content">
+                            <h3 class="about-name">
+                                <span class="name-label">Name:</span>
+                                <span class="editable-field" data-field="name2">[Your Name Here]</span>
+                            </h3>
+                            <div class="about-role">
+                                <i class="fas fa-briefcase"></i>
+                                <span class="editable-field" data-field="role2">[Your Role / Title Here]</span>
+                            </div>
+                            <p class="about-bio">
+                                <span class="editable-field" data-field="bio2">[Write your bio here — Share your story, your passions, what drives you, and what you bring to this partnership. Make it personal and authentic!]</span>
+                            </p>
+                            <div class="about-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="editable-field" data-field="location2">[Your Location]</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span class="editable-field" data-field="education2">[Your Education / Background]</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="editable-field" data-field="interests2">[Your Interests / Hobbies]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">💡 What We Bring</span>
+                <h2 class="section-title">Our <span class="gradient-text">Skills</span></h2>
+                <p class="section-desc">A powerful combination of talents and expertise.</p>
+            </div>
+
+            <div class="skills-layout">
+                <!-- Person 1 Skills -->
+                <div class="skills-column" id="skills-person-1">
+                    <div class="skills-person-header">
+                        <div class="person-badge person1-accent">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Person 1 Skills</h3>
+                        <span class="editable-field small" data-field="skillsname1">[Name]</span>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill1_1_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill1_1_pct">[90%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90" style="--fill-color: var(--accent-1)"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill1_2_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill1_2_pct">[85%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85" style="--fill-color: var(--accent-2)"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill1_3_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill1_3_pct">[80%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="80" style="--fill-color: var(--accent-3)"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill1_4_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill1_4_pct">[75%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="75" style="--fill-color: var(--accent-4)"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill1_5_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill1_5_pct">[70%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="70" style="--fill-color: var(--accent-1)"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VS Divider -->
+                <div class="skills-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-badge">&</div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <!-- Person 2 Skills -->
+                <div class="skills-column" id="skills-person-2">
+                    <div class="skills-person-header">
+                        <div class="person-badge person2-accent">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Person 2 Skills</h3>
+                        <span class="editable-field small" data-field="skillsname2">[Name]</span>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill2_1_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill2_1_pct">[88%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="88" style="--fill-color: var(--accent-2)"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill2_2_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill2_2_pct">[82%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="82" style="--fill-color: var(--accent-3)"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill2_3_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill2_3_pct">[78%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="78" style="--fill-color: var(--accent-4)"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill2_4_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill2_4_pct">[92%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="92" style="--fill-color: var(--accent-1)"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item glass-card">
+                        <div class="skill-header">
+                            <span class="skill-name editable-field" data-field="skill2_5_name">[Skill Name]</span>
+                            <span class="skill-percent editable-field" data-field="skill2_5_pct">[85%]</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85" style="--fill-color: var(--accent-2)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🎯 Our Work</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="section-desc">Showcasing what we've built — together and individually.</p>
+            </div>
+
+            <!-- Project Filter Tabs -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="person1">Person 1</button>
+                <button class="filter-btn" data-filter="person2">Person 2</button>
+                <button class="filter-btn" data-filter="collab">Collaborative</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Person 1 - Project 1 -->
+                <div class="project-card glass-card" data-category="person1">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-owner-tag person1-tag">Person 1</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="editable-field" data-field="p1_proj1_title">[Project Title]</h3>
+                        <p class="editable-field" data-field="p1_proj1_desc">[Describe your project — what it does, technologies used, and your role.]</p>
+                        <div class="project-tags">
+                            <span class="editable-field tag" data-field="p1_proj1_tag1">[Tech]</span>
+                            <span class="editable-field tag" data-field="p1_proj1_tag2">[Tech]</span>
+                            <span class="editable-field tag" data-field="p1_proj1_tag3">[Tech]</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Person 1 - Project 2 -->
+                <div class="project-card glass-card" data-category="person1">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-owner-tag person1-tag">Person 1</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="editable-field" data-field="p1_proj2_title">[Project Title]</h3>
+                        <p class="editable-field" data-field="p1_proj2_desc">[Describe your project — what it does, technologies used, and your role.]</p>
+                        <div class="project-tags">
+                            <span class="editable-field tag" data-field="p1_proj2_tag1">[Tech]</span>
+                            <span class="editable-field tag" data-field="p1_proj2_tag2">[Tech]</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Person 2 - Project 1 -->
+                <div class="project-card glass-card" data-category="person2">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-owner-tag person2-tag">Person 2</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="editable-field" data-field="p2_proj1_title">[Project Title]</h3>
+                        <p class="editable-field" data-field="p2_proj1_desc">[Describe your project — what it does, technologies used, and your role.]</p>
+                        <div class="project-tags">
+                            <span class="editable-field tag" data-field="p2_proj1_tag1">[Tech]</span>
+                            <span class="editable-field tag" data-field="p2_proj1_tag2">[Tech]</span>
+                            <span class="editable-field tag" data-field="p2_proj1_tag3">[Tech]</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Person 2 - Project 2 -->
+                <div class="project-card glass-card" data-category="person2">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-owner-tag person2-tag">Person 2</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="editable-field" data-field="p2_proj2_title">[Project Title]</h3>
+                        <p class="editable-field" data-field="p2_proj2_desc">[Describe your project — what it does, technologies used, and your role.]</p>
+                        <div class="project-tags">
+                            <span class="editable-field tag" data-field="p2_proj2_tag1">[Tech]</span>
+                            <span class="editable-field tag" data-field="p2_proj2_tag2">[Tech]</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collaborative Project -->
+                <div class="project-card glass-card collab-card" data-category="collab">
+                    <div class="project-image">
+                        <div class="project-placeholder collab-placeholder">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <span class="project-owner-tag collab-tag">Collaborative</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="editable-field" data-field="collab_proj_title">[Collaborative Project Title]</h3>
+                        <p class="editable-field" data-field="collab_proj_desc">[Describe your collaborative project — what you built together, how you split the work, and what you learned.]</p>
+                        <div class="project-tags">
+                            <span class="editable-field tag" data-field="collab_proj_tag1">[Tech]</span>
+                            <span class="editable-field tag" data-field="collab_proj_tag2">[Tech]</span>
+                            <span class="editable-field tag" data-field="collab_proj_tag3">[Tech]</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📬 Let's Connect</span>
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="section-desc">Reach out to either of us — we'd love to hear from you!</p>
+            </div>
+
+            <div class="contact-layout">
+                <!-- Person 1 Contact -->
+                <div class="contact-card glass-card">
+                    <div class="contact-header person1-accent-bg">
+                        <div class="contact-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Person 1</h3>
+                        <span class="editable-field small" data-field="contactname1">[Name]</span>
+                    </div>
+                    <div class="contact-body">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Email</span>
+                                <span class="editable-field" data-field="email1">[your.email@example.com]</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Phone</span>
+                                <span class="editable-field" data-field="phone1">[+1 234 567 8900]</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Location</span>
+                                <span class="editable-field" data-field="contactloc1">[City, Country]</span>
+                            </div>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shared Message Form -->
+                <div class="contact-form-wrapper glass-card">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="senderName">Your Name</label>
+                            <input type="text" id="senderName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senderEmail">Your Email</label>
+                            <input type="email" id="senderEmail" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="messageFor">Message For</label>
+                            <select id="messageFor">
+                                <option value="both">Both of Us</option>
+                                <option value="person1">Person 1</option>
+                                <option value="person2">Person 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="messageText">Message</label>
+                            <textarea id="messageText" rows="4" placeholder="Tell us about your project or idea..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Message sent successfully! We'll get back to you soon.</p>
+                    </div>
+                </div>
+
+                <!-- Person 2 Contact -->
+                <div class="contact-card glass-card">
+                    <div class="contact-header person2-accent-bg">
+                        <div class="contact-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Person 2</h3>
+                        <span class="editable-field small" data-field="contactname2">[Name]</span>
+                    </div>
+                    <div class="contact-body">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Email</span>
+                                <span class="editable-field" data-field="email2">[your.email@example.com]</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Phone</span>
+                                <span class="editable-field" data-field="phone2">[+1 234 567 8900]</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Location</span>
+                                <span class="editable-field" data-field="contactloc2">[City, Country]</span>
+                            </div>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-char">Chari</span><span class="logo-x">X</span><span class="logo-angie">Angie</span>
+                </div>
+                <p class="footer-text">Two minds, one vision. Built with <i class="fas fa-heart" style="color: var(--accent-1)"></i> and lots of coffee.</p>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ChariXAngie. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
